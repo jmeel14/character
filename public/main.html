@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LLM Character Chat</title>
+        <link href="./style.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+        <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
+        <script src="./script.js" type="module"></script>
+        <script src="./wsConn.js" type="module"></script>
+    </head>
+    <body>
+        <div id="ctn">
+            <div class="ctn-item"><h3>Character name goes here</h3></div>
+            <div class="ctn-item"><div id="chatBox"></div></div>
+            <div class="ctn-item">
+                <div class="interact"><button id="submitMsg">Chat</button></div>
+                <div class="interact"><textarea id="msgBox"></textarea></div>
+            </div>
+            <div class="ctn-item errZone">
+                <div class="errTitle"></div>
+                <div class="errBody"></div>
+            </div>
+        </div>
+        <div id="control">
+            <div class="ctrl-item"><button id="reset">Clear chat</button></div>
+        </div>
+        <div id="def">
+            <h3>Character definition</h3>
+            <textarea id="prepromptIn" placeholder="Insert how you want the LLM to behave."></textarea>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+body { margin:0; padding:0; display:flex; flex-flow:row wrap; }
+
+#ctn { flex:0 50%; padding:5px; }
+#ctn .ctn-item { width:100%; }
+#ctn .ctn-item h3 { text-align:center; }
+#ctn .ctn-item #chatBox {
+    width:100%; height:300px; padding:5px; overflow:auto;
+    background:linear-gradient(to bottom, #d0f0fa, #a0d0f0);
+}
+#ctn #chatBox .chat-item {
+    margin-top:3px; min-height:50px;
+    width:90%;
+    background:#fff;
+}
+#ctn #chatBox .chat-item { padding:5px 10px; }
+#ctn #chatBox .chat-contents { display:inline-block; width:600px; }
+#ctn #chatBox .chat-contents pre { width:100%; overflow:auto; }
+#ctn #chatBox .chat-reroll {
+    position:relative; display:inline-block; width:10px; height:10px;
+    cursor:pointer; user-select:none; transition:transform 0.5s;
+    border-top:solid 2px #888; border-bottom:solid 2px #888;
+    border-bottom-right-radius:10px; border-top-left-radius:10px;
+}
+#ctn #chatBox .chat-reroll:hover { transform:rotate(45deg); }
+#chatBox .chat-reroll::before, #chatBox .chat-reroll::after {
+    content:""; display:block; position:absolute;
+    width:5px; height:5px;
+    background:linear-gradient(to bottom right, #888 0%, #888 50%, #88888800 50.1%, #88888800 100%);
+}
+#chatBox .chat-reroll::before { top:-3px; left:6px; transform:rotate(135deg); }
+#chatBox .chat-reroll::after { bottom:-3px; transform:rotate(-45deg); }
+
+#ctn #chatBox .chat-item p { margin:0; padding:0; }
+#ctn #chatBox .chat-item[author="system"] {
+    margin:0 auto; padding-top:15px;
+    background:#eee; border-bottom:solid 2px black;
+    text-align:center;
+}
+#ctn #chatBox .chat-item[author="user"] {
+    margin-left:auto; margin-right:5px;
+    border-bottom-left-radius:5px;
+}
+
+#ctn .ctn-item .interact { display:inline-block; margin-top:5px; vertical-align:middle; height:100%; }
+#ctn .ctn-item .interact:nth-child(1) { background:red; margin-left:20px; }
+#ctn .ctn-item .interact:nth-child(2) { width:75%; }
+#ctn .ctn-item button { padding:3px 5px; height:35px; }
+#ctn .ctn-item textarea { min-width:100%; max-width:100%; min-height:100px; }
+#ctn .ctn-item.errZone { margin-top:5px; background:#fdd; color:#a00; user-select:none; }
+#ctn .errZone .error { border:dashed 1px red; }
+#ctn .errZone .error .errTitle { background:#f88; margin:0; padding:0 5px; display:inline-block; }
+#ctn .errZone .error .errBody { margin:0; margin-left:5px; padding:0; display:inline-block; }
+#ctn .errZone .error .errExtra { background:#fffafa; margin:0; padding:0 5px; font-size:12px; }
+
+#control { flex:0 10%; vertical-align:top; }
+
+#def {
+    flex:0 25%; vertical-align:top;
+}
+#def textarea { width:100%; min-height:55px; }
